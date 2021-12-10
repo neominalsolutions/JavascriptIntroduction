@@ -1,13 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- sayfa yüklenirken çalışacak olan kod -->
+    <!-- genelde kütüphaneler yukarıda yüklenir. Bu kısımda DOM müdehale yoksa kullanılır. -->
+    <script>
+        alert('Merhaba Head Tag JS');
+    </script>
 </head>
+
 <body>
-    
+
     Test2
+
+
+    <h2>Demo JavaScript in Head</h2>
+
+    <p id="demo">A Paragraph</p>
+    <button type="button" onclick="myFunction()">Try it</button>
+
+    <!-- sayfa açıldıktan sonra kullanıcının butona basması ile çalıacak kod -->
+    <button onclick="clickMe()">CLick Me</button>
+
+    <button onclick="printFile()">print</button>
+  
+
+    <!-- isimler -->
+    <p id="names"></p>
+
+    <!-- body elementinin bir üstünü script alanı olarak kullanırız. -->
+
+    <script src="01-introduction.js"></script>
+    <script src="02-jstypes.js"></script>
+    <script>
+
+  // arrow function s
+
+    let division = (x,y) => parseInt(x) / y;
+
+    division(5.9,3);
+
+    // arrow functions 2 scope olan arrow
+    let division2 = (x,y) => {
+        return x / y;
+    }
+
+
+// void method örneği
+        function printFile() {
+        
+            // print();
+
+            window.print();
+        }
+
+        // return eden fuction
+        function Sum(number1,number2){
+            return number1 + number2;
+        }
+
+       var result = Sum(4,6);
+
+        function clickMe() {
+
+            // document nesnesi DOM erişmemizi sağlar
+            // window ise BOM erişmemizi sağlar
+            console.log('window', window);
+            console.log('document', window.document);
+            window.alert("alert 1");
+
+            document.write('Hello JS');
+        
+        }
+
+    </script>
 </body>
+
 </html>
